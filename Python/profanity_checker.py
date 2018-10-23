@@ -11,13 +11,8 @@ def read_text():
 def check_profanity(text_to_check):
     connection = urlopen("http://www.wdylike.appspot.com/?q="+text_to_check)
     output = connection.read()
+    print(output)
     connection.close()
-    if "true" in output:
-        print("Bad Words Detected~")
-    elif "false" in output:
-        print("This document has no cursed words~.")
-    else:
-        print("Could not read the document properly~.")
 
 
 print("Profanity Checker is now running.")
